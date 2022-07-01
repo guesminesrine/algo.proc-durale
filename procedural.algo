@@ -1,0 +1,44 @@
+PROCEDURE dot_product(v1, v2 :integer, var ps:integer=0)
+VAR
+i,j:integer
+BEGIN
+ for i from 0 to n-1 STEP 1 do 
+  ps:=ps+ v1[I] * v2[i]
+ end for 
+ write("dot dot_product" ,ps)
+END
+  ALGORITHM dot_product_with_procedure
+VAR
+    n:INTEGER
+    v1 : ARRAY_OF INTEGER[n];
+    v2 : ARRAY_OF INTEGER[n];
+
+BEGIN
+    FOR i FROM 0 TO n-1 STEP 1  DO
+        read(v1[i])
+    END_FOR
+
+    FOR i FROM 0 TO n-1 STEP 1  DO
+        read(v2[i]);
+    END_FOR
+
+    Write(dot_product(v1,v2)) 
+    
+    IF ((dot_product(v1,v2))=0) THEN
+        write("les deux vecteurs sont orthogonaux");
+    ELSE
+         write("les deux vecteurs ne  sont pas orthogonaux");
+    END_IF
+    
+END
+FUNCTION dot_product(VAR  v1 : ARRAY_OF INTEGER[n],VAR  v2 : ARRAY_OF INTEGER[n]) : INTEGER
+VAR
+    i:INTEGER;
+    ps:INTEGER:=0;
+BEGIN
+    FOR i FROM 0 TO n-1 STEP 1  DO
+        ps := ps + v1[i] * v2[i];
+    END_FOR
+    
+    RETURN ps ;
+END
